@@ -1,11 +1,14 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { connecDB } from './config/db';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+connecDB();
 
 app.use(cors());
 app.use(express.json());
